@@ -10,7 +10,7 @@ function getPollutionIndex() {
     $('#city-name').text(city.name)
 
     let key = 'E0A84CAA-864F-41AA-BDF7-100EFA2048E4'
-    let URL = `http://www.airnowapi.org/aq/observation/latLong/current/?format=application/json&latitude=${city.lat}&longitude=${city.lon}&distance=${city.dist}&API_KEY=${key}`
+    let URL = `https://www.airnowapi.org/aq/observation/latLong/current/?format=application/json&latitude=${city.lat}&longitude=${city.lon}&distance=${city.dist}&API_KEY=${key}`
 
     $.ajax({
         url: URL,
