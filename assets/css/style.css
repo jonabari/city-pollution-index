@@ -1,0 +1,138 @@
+/* UI
+#ui {
+} */
+
+#airQualityIndexNumber {
+    font-size: 6em;
+    position: absolute;
+    left: 10%;
+    top: 15%;
+    z-index: 3;
+  }
+
+
+.checkFunctions {
+  position: absolute;
+  left: 1.5em;
+  bottom: 25%;
+  z-index: 2;
+}
+
+/*Overlay*/
+#display-fog {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+1,ffffff+51,ffffff+100&0+1,0.6+40,1+99 */
+    background: -moz-linear-gradient(top, rgba(255,255,255,0) 1%, rgba(255,255,255,0.6) 80%, rgba(255,255,255,0.67) 51%, rgba(255,255,255,1) 99%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0) 1%,rgba(255,255,255,0.6) 80%,rgba(255,255,255,0.67) 51%,rgba(255,255,255,1) 99%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 1%,rgba(255,255,255,0.6) 80%,rgba(255,255,255,0.67) 51%,rgba(255,255,255,1) 99%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 1;
+    }
+
+.indexName {
+  text-orientation: upright;
+  writing-mode: vertical-lr;
+  font-size: 2em;
+  position: absolute;
+  left: 10%;
+  bottom: 25%;
+  z-index: 2;
+}
+
+
+#locationName {
+  text-orientation: upright;
+  writing-mode: vertical-lr;
+  font-size: 2em;
+  position: absolute;
+  right: 1.5em;
+  bottom: 25%;
+  z-index: 2;
+}
+
+/* STROKE	
+#stroke {
+} */
+
+.st0 {
+    opacity:0.9;
+}
+.st1 {
+    fill:#A5A7AA;
+}
+.st2 {
+    fill:#C2C4C6;
+}
+.st3 {
+    fill:#CFD1D2;
+}
+.st4 {
+    fill:#C9CACC;
+}
+.st5 {
+    fill:#AFB1B4;
+}
+.st6 {
+    fill:#B3B5B8;
+}
+.st7 {
+    fill:#8D9092;
+}
+.st8 {
+    fill:#97999C;
+}
+.st9 {
+    fill:#9D9FA2;
+}
+.st10 {
+    fill:#E2E3E4;
+}
+.st11 {
+    fill:#DCDDDE;
+}
+.st12 {
+    fill:#DCDDDE;
+}
+.st13 {
+    opacity:0.78;
+}
+.st14 {
+    opacity:0.76;
+}
+.st15 {
+    fill:none;stroke:#000000;stroke-miterlimit:10;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* POLLUTION-INDEX */
+
+.severe {
+    color: red;
+  }
+  
+  .heavy {
+    color: purple;
+  }
+  
+  .moderate {
+    color: red;
+  }
+  
+  .light {
+    color: orange;
+  }
+  
+  .good {
+    color: yellow;
+  }
+  
+  .excellent {
+    color: green;
+  }
