@@ -1,5 +1,7 @@
+// NOTE: What if express to send over the cities!
+
 // Cities
-const mexico = { name: 'Mexico', lat: '19.4326', lon: '-99.1332', dist: '25' }
+const mexicoCity = { name: 'Mexico', lat: '19.4326', lon: '-99.1332', dist: '25' }
 const newYork = { name: 'New York', lat: '19.4326', lon: '-99.1332', dist: '25' }
 
 // Global variables
@@ -10,7 +12,7 @@ var fog
 
 // airNow API call: https://docs.airnowapi.org/CurrentObservationsByLatLon/query
 function getPollutionIndex() {
-    city = mexico
+    city = mexicoCity
     $('#city-name').text(city.name)
 
     let key = 'E0A84CAA-864F-41AA-BDF7-100EFA2048E4'
@@ -29,14 +31,13 @@ function getPollutionIndex() {
 function calculateHazeAndFog() {
     haze = (500 - AQI) * .002
     fog = AQI / 500
-    $('#check-haze').text(`Haze: ${haze.toFixed(2)}`)
-    $('#check-fog').text(`Fog: ${fog.toFixed(2)}`)
+    $('#check-haze').text(`Haze: ${haze.toFixed(3)}`)
+    $('#check-fog').text(`Fog: ${fog.toFixed(3)}`)
 }
 
 $('#select-mexico').on('click', function () {
     console.log('===> I hear ya!')
-    $('#display-city').load('assets/html/painting-mexico-city.html')
-});
+})
 
 // On Load
 getPollutionIndex()
