@@ -1,6 +1,28 @@
-/* UI
+@font-face {
+    font-family: 'kylefont1'; /*a name to be used later*/
+    src: url('../images/kylefont1.otf'); /*URL to font*/
+}
+
+/*UI*/
 #ui {
-} */
+  font-family: 'kylefont1';
+  color: #b2b2b2;
+  background-color: #353535;
+  border-top: black;
+  position:absolute;
+  bottom: 2em;
+  left: 2em;
+  width: 30%;
+  font-size: .5em;
+  z-index: 2;
+  border-radius: 2em;
+  padding: 2em;
+-webkit-box-shadow: 4px 4px 34px -8px rgba(0,0,0,0.75);
+-moz-box-shadow: 4px 4px 34px -8px rgba(0,0,0,0.75);
+box-shadow: 4px 4px 34px -8px rgba(0,0,0,0.75);
+}
+
+
 
 #airQualityIndexNumber {
     font-size: 6em;
@@ -10,6 +32,17 @@
     z-index: 3;
   }
 
+.backgroundPainting {
+height: 100%;
+width: 100%;
+  position:absolute;
+  z-index: -1;
+  background-image: url('../images/painting-df.svg');
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center top;
+  background-attachment: fixed;
+}
 
 .checkFunctions {
   position: absolute;
@@ -54,7 +87,7 @@
   z-index: 2;
 }
 
-/* STROKE	
+/* STROKE
 #stroke {
 } */
 
@@ -116,23 +149,23 @@ ul {
 .severe {
     color: red;
   }
-  
+
   .heavy {
     color: purple;
   }
-  
+
   .moderate {
     color: red;
   }
-  
+
   .light {
     color: orange;
   }
-  
+
   .good {
     color: yellow;
   }
-  
+
   .excellent {
     color: green;
   }
