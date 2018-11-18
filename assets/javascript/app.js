@@ -1,13 +1,13 @@
 // Cities (Easter cities commented out, as the API doesn't handle them. We ahve to find a new API for that)
-const mexicoCity = { name: 'Mexico', lat: '19.4326', lon: '-99.1332', img: 'cdmx.svg' }
-const newYork = { name: 'New York', lat: '40.7128', lon: '-74.0060', img: 'ny.svg' }
+const cdmx = { name: 'Mexico', lat: '19.4326', lon: '-99.1332', img: 'cdmx.svg' }
+const ny = { name: 'New York', lat: '40.7128', lon: '-74.0060', img: 'ny.svg' }
 const dallas = { name: 'Dallas', lat: '32.7767', lon: '-96.7970', img: 'dallas.svg' }
 const denver = { name: 'Denver', lat: '39.7392', lon: '-104.9903', img: 'denver.svg' }
 // const yangon = { name: 'Yangon', lat: '16.8661', lon: '96.1951', img: 'yangon.svg' }
 // const shanghai = { name: 'Shanghai', lat: '31.2304', lon: '121.4737', img: 'shanghai.svg' }
 
 
-let city = newYork
+let city = ny
 
 // airNow API call: https://docs.airnowapi.org/CurrentObservationsByLatLon/query
 function getPollutionIndex() {
