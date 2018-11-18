@@ -1,9 +1,9 @@
 @font-face {
     font-family: 'kylefont1'; /*a name to be used later*/
-    src: url('../images/kylefont1.otf'); /*URL to font*/
+    src: url('../fonts/KyleFont1.otf'); /*URL to font*/
 }
 
-/*UI*/
+/* UI
 #ui {
   font-family: 'kylefont1';
   color: #b2b2b2;
@@ -20,7 +20,7 @@
 -webkit-box-shadow: 4px 4px 34px -8px rgba(0,0,0,0.75);
 -moz-box-shadow: 4px 4px 34px -8px rgba(0,0,0,0.75);
 box-shadow: 4px 4px 34px -8px rgba(0,0,0,0.75);
-}
+} */
 
 
 
@@ -37,19 +37,22 @@ height: 100%;
 width: 100%;
   position:absolute;
   z-index: -1;
-  background-image: url('../images/painting-df.svg');
   background-repeat: no-repeat;
-  background-size: auto 100%;
+  background-size: cover;
   background-position: center top;
   background-attachment: fixed;
 }
 
-.checkFunctions {
+body {
+    overflow: hidden;
+}
+
+/* .checkFunctions {
   position: absolute;
   left: 1.5em;
   bottom: 25%;
   z-index: 2;
-}
+} */
 
 /*Overlay*/
 #display-fog {

@@ -5,42 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Pollution Index Test</title>
 </head>
 
 <body>
-<div id="painting" class="backgroundPainting"></div>
+    <div id="painting" class="backgroundPainting"></div>
+    <p id="airQualityIndexNumber"></p>
 
-<p id="airQualityIndexNumber">is this here?</p>
-
-<p class="levelWord">级</p>
-<div class="indexName">
-  <p id="airQualityIndexName" class="indexName">index name</p>
-</div>
-<div id="locationName"><p>市</p></div>
-
-
-<!-- I took everything you had before and put it in a little gray box-->
-<div id="ui">
-    <h1>Pollution levels in
-        <span id="city-name"></span>:
-        <span id="pollution-index"></span>
-    </h1>
-
-    <div id="checkFunctions">
-        <ul>
-            <li>
-                <h3 id="check-haze"></h3>
-            </li>
-            <li>
-                <h3 id="check-fog"></h3>
-            </li>
-        </ul>
+    <p class="levelWord">级</p>
+    <div class="indexName">
+        <p id="airQualityIndexName" class="indexName"></p>
+    </div>
+    <div id="locationName">
+        <p></p>
     </div>
 
-    <h1 id="select-mexico">Click to load Mexico</h1>
-  </div>
+    <!-- I took everything you had before and put it in a little gray box-->
+    <!-- <div id="ui">
+        <h1>Pollution levels in
+            <span id="city-name"></span>:
+            <span id="pollution-index"></span>
+        </h1> -->
+
+    <!-- <div id="checkFunctions">
+            <ul>
+                <li>
+                    <h3 id="check-haze"></h3>
+                </li>
+                <li>
+                    <h3 id="check-fog"></h3>
+                </li>
+            </ul>
+        </div>
+    </div> -->
 
     <!-- Overlay -->
     <div id="display-fog"></div>
