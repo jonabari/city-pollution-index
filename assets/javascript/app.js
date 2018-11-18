@@ -7,7 +7,7 @@ const denver = { name: 'Denver', lat: '39.7392', lon: '-104.9903', img: 'denver.
 // const shanghai = { name: 'Shanghai', lat: '31.2304', lon: '121.4737', img: 'shanghai.svg' }
 
 
-let city = mexicoCity
+let city = newYork
 
 // airNow API call: https://docs.airnowapi.org/CurrentObservationsByLatLon/query
 function getPollutionIndex() {
@@ -21,7 +21,7 @@ function getPollutionIndex() {
     $.ajax({
         url: URL,
         success: function (res) {
-            let AQI = res[1].AQI
+            let AQI = res[0].AQI
             $('#pollution-index').text(`${res[1].Category.Name} (AQI: ${AQI})`)
             calculateHazeAndFog(AQI)
         }
