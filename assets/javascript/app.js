@@ -7,7 +7,7 @@ const denver = { name: 'Denver', lat: '39.7392', lon: '-104.9903', img: 'denver.
 // const shanghai = { name: 'Shanghai', lat: '31.2304', lon: '121.4737', img: 'shanghai.svg' }
 
 
-let city = ny
+let city = dallas
 
 // airNow API call: https://docs.airnowapi.org/CurrentObservationsByLatLon/query
 function getPollutionIndex() {
@@ -25,8 +25,10 @@ function getPollutionIndex() {
             $('#pollution-index').text(`${res[1].Category.Name} (AQI: ${AQI})`)
             calculateHazeAndFog(AQI)
         }
-    })
+   })
 }
+
+
 
 function calculateHazeAndFog(AQI) {
     haze = (500 - AQI) * .002
@@ -40,43 +42,43 @@ function airQualityIndex(AQI) {
     if (AQI >= 300) {
         $('#airQualityIndexName').addClass('severe').text('严重污染')
         $('#airQualityIndexNumber').addClass('severe').text('六')
-        $('#locationName').addClass('severe')
+        $('#selectedLocation').addClass('severe')
     } else if (AQI <= 299 && AQI > 201) {
         $('#airQualityIndexName').addClass('heavy').text('重度污染')
         $('#airQualityIndexNumber').addClass('heavy').text('五')
-        $('#locationName').addClass('heavy')
+        $('#selectedLocation').addClass('heavy')
     } else if (AQI <= 200 && AQI > 151) {
         $('#airQualityIndexName').addClass('moderate').text('中度污染')
         $('#airQualityIndexNumber').addClass('moderate').text('四')
-        $('#locationName').addClass('moderate')
+        $('#selectedLocation').addClass('moderate')
     } else if (AQI <= 150 && AQI > 101) {
         $('#airQualityIndexName').addClass('light').text('轻度污染')
         $('#airQualityIndexNumber').addClass('light').text('三')
-        $('#locationName').addClass('light')
+        $('#selectedLocation').addClass('light')
     } else if (AQI <= 100 && AQI > 51) {
         $('#airQualityIndexName').addClass('good').text('良')
-        $('#airQualityIndexNumber').addClass('good').text('一')
-        $('#locationName').addClass('good')
+        $('#airQualityIndexNumber').addClass('good').text('二')
+        $('#selectedLocation').addClass('good')
     } else if (AQI <= 51) {
-        $('#airQualityIndexName').addClass('excellent').text('优')
-        $('#airQualityIndexNumber').addClass('excellent').text('二')
-        $('#locationName').addClass('excellent')
+        $('#airQualityIndexName').text('优')
+        $('#airQualityIndexNumber').addClass('excellent').text('一')
+        $('#selectedLocation').addClass('excellent')
     }
 }
 
 function translateCity() {
     switch (city.name) {
         case 'Mexico':
-            $("#locationName").text('墨西哥')
+            $(".locationName").text('墨西哥成')
             break
         case 'New York':
-            $("#locationName").text('纽约')
+            $(".locationName").text('纽约')
             break
         case 'Dallas':
-            $("#locationName").text('达拉斯')
+            $(".locationName").text('达拉斯')
             break
         case 'Denver':
-            $("#locationName").text('丹佛')
+            $(".locationName").text('丹佛')
             break
         // case 'Yangon':
         //     $("#locationName").text('仰光')
