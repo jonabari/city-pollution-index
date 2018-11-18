@@ -6,12 +6,13 @@ const denver = { name: 'Denver', lat: '39.7392', lon: '-104.9903', img: 'denver.
 // const yangon = { name: 'Yangon', lat: '16.8661', lon: '96.1951', img: 'yangon.svg' }
 // const shanghai = { name: 'Shanghai', lat: '31.2304', lon: '121.4737', img: 'shanghai.svg' }
 
-
-let city = dallas
+let city = cdmx
+var modal = document.getElementById('menuModal')
 
 // airNow API call: https://docs.airnowapi.org/CurrentObservationsByLatLon/query
-function getPollutionIndex() {
+function renderCityAndGetAQI() {
 
+    console.log(city.name)
     $('#city-name').text(city.name)
     $('.backgroundPainting').css('background-image', `url('assets/images/painting-${city.img}')`);
 
@@ -21,74 +22,96 @@ function getPollutionIndex() {
     $.ajax({
         url: URL,
         success: function (res) {
-            let AQI = res[0].AQI
+            let AQI = res[1].AQI
             $('#pollution-index').text(`${res[1].Category.Name} (AQI: ${AQI})`)
             calculateHazeAndFog(AQI)
         }
-   })
+    })
 }
-
-
 
 function calculateHazeAndFog(AQI) {
     haze = (500 - AQI) * .002
     fog = AQI / 500
     $('#check-haze').text(`Haze: ${haze.toFixed(3)}`)
     $('#check-fog').text(`Fog: ${fog.toFixed(3)}`)
-    airQualityIndex(AQI)
+    displayAQI(AQI)
 }
 
-function airQualityIndex(AQI) {
+function displayAQI(AQI) {
     if (AQI >= 300) {
-        $('#airQualityIndexName').addClass('severe').text('严重污染')
-        $('#airQualityIndexNumber').addClass('severe').text('六')
-        $('#selectedLocation').addClass('severe')
+        $('#airQualityIndexName').attr('class', 'severe').text('严重污染')
+        $('#airQualityIndexNumber').attr('class', 'severe').text('六')
+        $('#selectedLocation').attr('class', 'severe')
     } else if (AQI <= 299 && AQI > 201) {
-        $('#airQualityIndexName').addClass('heavy').text('重度污染')
-        $('#airQualityIndexNumber').addClass('heavy').text('五')
-        $('#selectedLocation').addClass('heavy')
+        $('#airQualityIndexName').attr('class', 'heavy').text('重度污染')
+        $('#airQualityIndexNumber').attr('class', 'heavy').text('五')
+        $('#selectedLocation').attr('class', 'heavy')
     } else if (AQI <= 200 && AQI > 151) {
-        $('#airQualityIndexName').addClass('moderate').text('中度污染')
-        $('#airQualityIndexNumber').addClass('moderate').text('四')
-        $('#selectedLocation').addClass('moderate')
+        $('#airQualityIndexName').attr('class', 'moderate').text('中度污染')
+        $('#airQualityIndexNumber').attr('class', 'moderate').text('四')
+        $('#selectedLocation').attr('class', 'moderate')
     } else if (AQI <= 150 && AQI > 101) {
-        $('#airQualityIndexName').addClass('light').text('轻度污染')
-        $('#airQualityIndexNumber').addClass('light').text('三')
-        $('#selectedLocation').addClass('light')
+        $('#airQualityIndexName').attr('class', 'light').text('轻度污染')
+        $('#airQualityIndexNumber').attr('class', 'light').text('三')
+        $('#selectedLocation').attr('class', 'light')
     } else if (AQI <= 100 && AQI > 51) {
-        $('#airQualityIndexName').addClass('good').text('良')
-        $('#airQualityIndexNumber').addClass('good').text('二')
-        $('#selectedLocation').addClass('good')
+        $('#airQualityIndexName').attr('class', 'good').text('良')
+        $('#airQualityIndexNumber').attr('class', 'good').text('二')
+        $('#selectedLocation').attr('class', 'good')
     } else if (AQI <= 51) {
-        $('#airQualityIndexName').text('优')
-        $('#airQualityIndexNumber').addClass('excellent').text('一')
-        $('#selectedLocation').addClass('excellent')
+        $('#airQualityIndexName').attr('class', 'excellent').text('优')
+        $('#airQualityIndexNumber').attr('class', 'excellent').text('一')
+        $('#selectedLocation').attr('class', 'excellent')
     }
 }
 
-function translateCity() {
-    switch (city.name) {
-        case 'Mexico':
-            $(".locationName").text('墨西哥成')
+$('.locationName').on('click', function () {
+    let selection = this.getAttribute('data-name')
+    switch (selection) {
+        case 'cdmx':
+            city = cdmx
+            $('.openMenu').text('墨西哥成')
             break
-        case 'New York':
-            $(".locationName").text('纽约')
+        case 'ny':
+            city = ny
+            $('.openMenu').text('纽约')
             break
-        case 'Dallas':
-            $(".locationName").text('达拉斯')
+        case 'dallas':
+            city = dallas
+            $('.openMenu').text('达拉斯')
             break
-        case 'Denver':
-            $(".locationName").text('丹佛')
+        case 'denver':
+            city = denver
+            $('.openMenu').text('丹佛')
             break
-        // case 'Yangon':
+        // case 'yangon':
+        //     city = yangon
         //     $("#locationName").text('仰光')
         //     break
-        // case 'Shanghai':
+        // case 'shanghai':
+        //     city = shanghai
         //     $("#locationName").text('上海')
         //     break
     }
+    renderCityAndGetAQI()
+    console.log(city.name)
+})
+
+// Open Menu
+$('.openMenu').on('click', function () {
+    modal.style.display = "block"
+})
+
+// When the user clicks on <span> (x), close the modal
+$('#menuCloseButton').on('click', function () {
+    modal.style.display = "none"
+})
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
 }
 
-// On Load
-getPollutionIndex()
-translateCity()
+renderCityAndGetAQI()

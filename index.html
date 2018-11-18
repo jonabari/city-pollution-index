@@ -13,12 +13,12 @@
 <body>
     <div id="painting" class="backgroundPainting"></div>
     <div class="aqiText">
-      <p id="airQualityIndexNumber">级</p>
-      <p id="airQualityIndexName">名字</p>
+        <p id="airQualityIndexNumber">级</p>
+        <p id="airQualityIndexName">名字</p>
     </div>
 
     <div id="selectedLocation">
-        <p class="locationName"></p>
+        <p class="openMenu">墨西哥成</p>
     </div>
 
     <!-- UI (country, haze, and fog values check)-->
@@ -43,6 +43,23 @@
     <!-- Overlay -->
     <div id="display-fog"></div>
     <div id="display-city"></div>
+
+    <!-- Modal -->
+    <div id="menuModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div id="menu">
+                    <ul id="locationList">
+                        <li id="listCdmx" class="locationName locationListItem" data-name="cdmx">墨西哥成</li>
+                        <li id="listNy" class="locationName locationListItem" data-name="ny">纽约</li>
+                        <li id="listDallas" class="locationName locationListItem" data-name="dallas">达拉斯</li>
+                        <li id="listDenver" class="locationName locationListItem" data-name="denver">丹佛</li>
+                    </ul>
+                    <div id="menuCloseButton"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="assets/javascript/app.js"></script>
