@@ -6,6 +6,7 @@ const denver = { name: 'Denver', lat: '39.7392', lon: '-104.9903', img: 'denver.
 // const yangon = { name: 'Yangon', lat: '16.8661', lon: '96.1951', img: 'yangon.svg' }
 // const shanghai = { name: 'Shanghai', lat: '31.2304', lon: '121.4737', img: 'shanghai.svg' }
 
+// CDMX is hardcoded as the onLoad city for now
 let city = cdmx
 var modal = document.getElementById('menuModal')
 

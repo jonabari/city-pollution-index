@@ -5,6 +5,7 @@
     src: url('../fonts/TensentypeXingKaiF.ttf');
 }
 
+// Prevent scrolling
 body {
     overflow: hidden;
 }
@@ -71,7 +72,7 @@ box-shadow: 4px 4px 34px -8px rgba(0,0,0,0.75);
     text-orientation: upright;
     writing-mode: vertical-lr;
     font-size: 4em;
-    margin: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px; 
 }
 
 .locationName:hover, .openMenu:hover {
