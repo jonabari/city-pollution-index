@@ -1,4 +1,4 @@
-// Cities (Easter cities commented out, as the API doesn't handle them. We ahve to find a new API for that)
+// Cities (Easter cities commented out, as the API doesn't handle them. We have to find a new API for that)
 const cdmx = { name: 'Mexico', lat: '19.4326', lon: '-99.1332', img: 'cdmx.svg' }
 const ny = { name: 'New York', lat: '40.7128', lon: '-74.0060', img: 'ny.svg' }
 const dallas = { name: 'Dallas', lat: '32.7767', lon: '-96.7970', img: 'dallas.svg' }
@@ -72,18 +72,22 @@ $('.locationName').on('click', function () {
         case 'cdmx':
             city = cdmx
             $('.openMenu').text('墨西哥成')
+            modal.style.display = "none"
             break
         case 'ny':
             city = ny
             $('.openMenu').text('纽约')
+            modal.style.display = "none"
             break
         case 'dallas':
             city = dallas
             $('.openMenu').text('达拉斯')
+            modal.style.display = "none"
             break
         case 'denver':
             city = denver
             $('.openMenu').text('丹佛')
+            modal.style.display = "none"
             break
         // case 'yangon':
         //     city = yangon
